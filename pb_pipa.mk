@@ -24,8 +24,8 @@ $(call inherit-product, device/xiaomi/pipa/device.mk)
 $(call inherit-product, vendor/pb/config/common.mk)
 
 # Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := pb_pipa
-PRODUCT_NAME := pipa
+PRODUCT_DEVICE := pipa
+PRODUCT_NAME := pb_pipa
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Pad 6
 PRODUCT_MANUFACTURER := xiaomi
