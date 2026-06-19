@@ -1,4 +1,4 @@
-TWRP and PBRP Tree for Poco F3 / Mi 11X / Redmi K40 (Alioth)
+TWRP and PBRP Tree for PIPA
 
 ---
 
@@ -8,12 +8,5 @@ OrangeFox Recovery Project developers
 
 Kona community developers
 
----
+Lineageos for kernel
 
-Branches:
-
-twrp-12.1 → TWRP 3.7.1 
-
-pbrp-12.1 → PBRP 4.0
-
----

@@ -26,7 +26,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 # Installs gsi keys into ramdisk, to boot a developer GSI with verified boot.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 
-LOCAL_PATH := device/xiaomi/alioth
+LOCAL_PATH := device/xiaomi/pipa
 
 # API
 PRODUCT_SHIPPING_API_LEVEL := 31
@@ -84,8 +84,8 @@ PRODUCT_PACKAGES += \
 #    android.system.keystore2
 
 # Screen
-TARGET_SCREEN_HEIGHT := 2400
-TARGET_SCREEN_WIDTH := 1080
+TARGET_SCREEN_HEIGHT := 2880
+TARGET_SCREEN_WIDTH := 1800
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
@@ -95,7 +95,7 @@ PRODUCT_SOONG_NAMESPACES += \
 
 # TWRP Configuration
 TW_THEME := portrait_hdpi
-TW_DEVICE_VERSION :=BY SIDDK
+TW_DEVICE_VERSION := AOSP
 RECOVERY_SDCARD_ON_DATA := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
@@ -105,6 +105,8 @@ TW_USE_TOOLBOX := true
 TW_INCLUDE_RESETPROP := true
 TW_INCLUDE_REPACKTOOLS := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
+TW_MAX_BRIGHTNESS := 4095
+TW_DEFAULT_BRIGHTNESS := 795	
 TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel0-backlight/brightness"
 TW_CUSTOM_CPU_TEMP_PATH := "/sys/devices/virtual/thermal/thermal_zone0/temp"
 TWRP_INCLUDE_LOGCAT := true
@@ -114,8 +116,7 @@ TW_NO_SCREEN_BLANK := true
 TW_NO_EXFAT_FUSE := true
 TW_EXCLUDE_APEX := true
 TW_INCLUDE_FASTBOOTD := true
-#TW_OVERRIDE_SYSTEM_PROPS := \
-#    "ro.bootimage.build.date.utc=ro.build.date.utc;ro.build.date.utc;ro.odm.build.date.utc=ro.build.date.utc;ro.product.build.date.utc=ro.build.date.utc;ro.system.build.date.utc=ro.build.date.utc;ro.system_ext.build.date.utc=ro.build.date.utc;ro.vendor.build.date.utc=ro.build.date.utc;ro.build.product;ro.build.fingerprint=ro.system.build.fingerprint;ro.build.version.incremental;ro.product.name=ro.product.system.name"
+TW_NO_HAPTICS := true
 
 # Crypto
 TW_INCLUDE_CRYPTO := true
@@ -147,4 +148,3 @@ PRODUCT_PACKAGES += \
 
 # VINTF
 PRODUCT_ENFORCE_VINTF_MANIFEST := true
-TW_SUPPORT_INPUT_AIDL_HAPTICS := true
