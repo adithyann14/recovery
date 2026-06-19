@@ -15,9 +15,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-     $(LOCAL_DIR)/pb_alioth.mk
+     $(LOCAL_DIR)/pb_pipa.mk
 
 COMMON_LUNCH_CHOICES := \
-    pb_alioth-user \
-    pb_alioth-userdebug \
-    pb_alioth-eng
+    pb_pipa-user \
+    pb_pipa-userdebug \
+    pb_pipa-eng

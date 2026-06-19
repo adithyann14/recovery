@@ -26,7 +26,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 # Installs gsi keys into ramdisk, to boot a developer GSI with verified boot.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 
-LOCAL_PATH := device/xiaomi/alioth
+LOCAL_PATH := device/xiaomi/pipa
 
 # API
 PRODUCT_SHIPPING_API_LEVEL := 31
@@ -84,8 +84,8 @@ PRODUCT_PACKAGES += \
 #    android.system.keystore2
 
 # Screen
-TARGET_SCREEN_HEIGHT := 2400
-TARGET_SCREEN_WIDTH := 1080
+TARGET_SCREEN_HEIGHT := 2880
+TARGET_SCREEN_WIDTH := 1800
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
@@ -147,4 +147,3 @@ PRODUCT_PACKAGES += \
 
 # VINTF
 PRODUCT_ENFORCE_VINTF_MANIFEST := true
-TW_SUPPORT_INPUT_AIDL_HAPTICS := true
