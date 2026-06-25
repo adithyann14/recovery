@@ -21,11 +21,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 $(call inherit-product, device/xiaomi/pipa/device.mk)
 
 # Inherit some common twrp stuff.
-$(call inherit-product, vendor/pb/config/common.mk)
+$(call inherit-product, vendor/twrp/config/common.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := pipa
-PRODUCT_NAME := pb_pipa
+PRODUCT_NAME := twrp_pipa
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Pad 6
 PRODUCT_MANUFACTURER := xiaomi
