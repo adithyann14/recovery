@@ -15,9 +15,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-     $(LOCAL_DIR)/pb_pipa.mk
+     $(LOCAL_DIR)/twrp_pipa.mk
 
 COMMON_LUNCH_CHOICES := \
-    pb_pipa-user \
-    pb_pipa-userdebug \
-    pb_pipa-eng
+    twrp_pipa-user \
+    twrp_pipa-userdebug \
+    twrp_pipa-eng
