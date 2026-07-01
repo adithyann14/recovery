@@ -31,3 +31,6 @@
 /usb_otg       		auto    /dev/block/sdg1                    /dev/block/sdg         	   flags=fsflags=utf8;display="USB-Storage";storage;wipeingui;removable
 /external_sd            auto    /dev/block/bootdevice/by-name/cust                                 flags=display="VirtualSD";storage;wipeingui;removable
 
+# Linux partitions
+/linux                  ext4    /dev/block/bootdevice/by-name/linux                                flags=display="Linux";backup=1;
+
