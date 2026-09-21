@@ -19,4 +19,4 @@ on boot
     start healthy-boot
     start health-hal-2-1
     setprop sys.usb.config adb
-
+    chmod 0777 /system/bin/rw

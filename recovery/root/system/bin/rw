@@ -1,0 +1,31 @@
+#!/system/bin/sh
+
+# Read active slot from kernel cmdline — always set by bootloader
+SLOT=$(grep -o 'androidboot.slot_suffix=[^ ]*' /proc/cmdline \
+       | cut -d= -f2)
+
+if [ -z "$SLOT" ]; then
+    echo "[!] Could not detect active slot — aborting" >&2
+    exit 1
+fi
+
+echo "[*] Active slot: $SLOT"
+
+for PART in \
+    system system_ext product \
+    vendor odm vendor_dlkm system_dlkm; do
+
+    BLOCK="/dev/block/mapper/${PART}${SLOT}"
+    MNT="/${PART}"
+
+    [ ! -e "$BLOCK" ] && continue  # skip if partition missing on this device
+    [ ! -d "$MNT" ] && mkdir -p "$MNT" 2>/dev/null
+
+    if mountpoint -q "$MNT" 2>/dev/null; then
+        mount -o remount,rw "$MNT" >/dev/null 2>&1
+    else
+        mount -o rw "$BLOCK" "$MNT" >/dev/null 2>&1
+    fi
+
+    echo "[+] /${PART}${SLOT} → /${PART}"
+done
